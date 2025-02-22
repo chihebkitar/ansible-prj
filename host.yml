@@ -1,9 +1,14 @@
 all:
   children:
-    ubuntu:
-      hosts:
-        ubuntu-server:
     centos:
       hosts:
         centos-server:
-
+          ansible_host: 192.168.56.6
+          ansible_user: vagrant
+          ansible_ssh_private_key_file: /home/centos/.vagrant.d/insecure_private_key
+    ubuntu:
+      hosts:
+        ubuntu-server:
+          ansible_host: 13.38.30.153
+          ansible_user: ubuntu
+          ansible_ssh_private_key_file: /home/centos/.ssh/aws_ansible_client_key.pem
